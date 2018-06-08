@@ -10,9 +10,7 @@ Note, that for showing macOS-specific modifier key symbols, a font that provides
 
 ## Example
 ```html
-<kbd key-binding-mac="Cmd+K V"
-     key-binding-win="Ctrl+K V"
-     key-binding-linux="Alt+K V">
+<kbd key-binding-mac="Cmd+K V" key-binding-win="Ctrl+K V" key-binding-linux="Alt+K V">
   Ctrl+K V
 </kbd>
 ```
