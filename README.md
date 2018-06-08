@@ -6,6 +6,8 @@ On macOS, modifier keys are replaced by the commonly used symbols (e.g. &#x21e7;
 
 If different key bindings are used on different platforms, those can be specified with custom attributes that replace the default key binding when shown on a matching platform.
 
+Note, that for showing macOS-specific modifier key symbols, a font that provides these glyphs need to be provided or present on the user's system.
+
 ## Example
 ```html
 <kbd key-binding-mac="Cmd+K V"
