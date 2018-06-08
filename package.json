@@ -25,6 +25,6 @@
   "scripts": {
     "prepublish": "./node_modules/jsmin/bin/jsmin --output ./src/kbd.min.js ./src/kbd.js",
     "lint": "./node_modules/eslint/bin/eslint ./src",
-    "test": "./node_modules/mocha/bin/mocha test/**/*.test.js --reporter spec"
+    "test": "./node_modules/mocha/bin/mocha test/**/*.test.js --inspect --reporter spec"
   }
 }

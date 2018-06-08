@@ -61,4 +61,20 @@ describe("Key Binding Translator Tests", function () {
     expect(dom.window.document.querySelector("kbd").textContent).to.be.equal("specific");
   });
 
+  it("Replaces title if not present", function () {
+    var dom = new JSDOM("<kbd key-binding-mac='Cmd+P'>Ctrl+P</kbd>", { "userAgent": "Win" });
+
+    KeyBindingTranslator.translateAll(dom.window);
+
+    expect(dom.window.document.querySelector("kbd").getAttribute("title")).is.not.empty;
+  });
+
+  it("Does not replace existing title", function () {
+    var dom = new JSDOM("<kbd key-binding-mac='Cmd+P' title='existing-title'>Ctrl+P</kbd>", { "userAgent": "Win" } );
+
+    KeyBindingTranslator.translateAll(dom.window);
+
+    expect(dom.window.document.querySelector("kbd").getAttribute("title")).to.be.equal("existing-title");
+  });
+
 });
