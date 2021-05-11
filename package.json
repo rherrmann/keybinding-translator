@@ -10,21 +10,23 @@
   "homepage": "https://github.com/rherrmann/keybinding-translator",
   "author": "Rüdiger Herrmann <ruediger.herrmann@gmx.de>",
   "engines": {
-    "node": "^9.6.0"
+    "node": "^12.21.0"
   },
   "devDependencies": {
-    "eslint": "^4.19.1",
-    "eslint-config-standard": "^11.0.0",
-    "eslint-plugin-standard": "^3.1.0",
-    "nodemon": "^1.17.5",
-    "mocha": "^5.2.0",
-    "chai": "^4.1.2",
-    "jsdom": "^11.11.0",
-    "jsmin": "^1.0.1"
+    "chai": "^4.3.4",
+    "eslint": "^7.26.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.3.1",
+    "jsdom": "^16.5.3",
+    "jsmin": "^1.0.1",
+    "mocha": "^8.4.0",
+    "nodemon": "^2.0.7"
   },
   "scripts": {
-    "prepublish": "./node_modules/jsmin/bin/jsmin --output ./src/kbd.min.js ./src/kbd.js",
-    "lint": "./node_modules/eslint/bin/eslint ./src",
-    "test": "./node_modules/mocha/bin/mocha test/**/*.test.js --inspect --reporter spec"
+    "prepublish": "npx jsmin --output ./src/kbd.min.js ./src/kbd.js",
+    "lint": "npx eslint ./src ./test",
+    "test": "npx mocha test/**/*.test.js --inspect --reporter spec"
   }
 }
